@@ -4,7 +4,8 @@
 
 .masthead {
   position: relative;
-  border-bottom: 1px solid $border-color;
+  background-color: $masthead-background-color;
+  border-bottom: 0px solid $border-color;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.15s;
@@ -46,9 +47,14 @@
   z-index: 20;
 }
 
+
+#site-nav {
+  background-color: $masthead-background-color;
+}
+
 .masthead__menu {
   width: 100%;
-
+  color: red;
   .site-nav {
     margin-left: 0;
 
