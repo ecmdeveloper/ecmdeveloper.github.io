@@ -3,11 +3,31 @@ layout: splash
 author_profile: true
 header:
   overlay_color: "#f48938"
-  overlay_filter: "0.0"
-  overlay_image: /assets/images/unsplash-image-1.jpg
-  cta_label: "Download"
+  cta_label: "Learn More"
   cta_url: "https://github.com/mmistakes/minimal-mistakes/"
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "ECM Developer is a free open source Eclipse plug-in aimed at supporting the development of applications using the IBM FileNet P8 Content Engine and CMIS enabled repositories. It approaches the ECM system from a developers point of view and tries to find solutions for day to day tasks."
+excerpt: "ECM Developer features a free open source Eclipse plug-in aimed at supporting the development of applications using the IBM FileNet P8 Content Engine and CMIS enabled repositories. It approaches the ECM system from a developers point of view and tries to find solutions for day to day tasks."
+feature_row2:
+  - excerpt: '<img src="/img/plugin/database.png"> Supports FileNet Content Engine Object Stores and CMIS repositories.<br><br>
+    <img src="/img/plugin/star.png"> <a href="/browsing-object-stores">Browse</a> using an Object Stores view and a Favorites view.<br><br>
+    <img src="/img/plugin/find.png"> Design <a href="/searching">Searches</a> using a graphical query designer.<br><br>
+    <img src="/img/plugin/tracker.png"> Quickly editing the <a href="/actions/editing-content">Content</a> of documents using a files tracker.<br><br>'
+  - excerpt: '<img src="/img/plugin/table_relationship.png"> Create <a href="/class-diagrams">Class Diagrams</a> based on the Object Store Classes.<br><br>
+    <img src="/img/plugin/shield.png"> Edit the <a href="/actions/security-editor">security</a> of folders, document and custom objects.<br><br>
+    <img src="/img/plugin/page_white_edit.png"> Edit the <a href="/actions/editing-properties">properties</a> of Folders, Documents and Custom Objects.<br><br>'
+  - excerpt: '<img src="/img/plugin/script_edit.png"> <a href="/editing-code-modules/">Code Module</a> Editor and automatic update of related actions.<br><br>
+        <img src="/img/plugin/application_go.png"> <a href="/console-projects">Console Projects</a>, execute Java methods using the search result or the selected items as input.<br><br>
+        And much more…'
+features_header:
+  - title: "PLUGIN FEATURES"
+intro:
+  - title: "BUT WAIT THERE IS MORE..."
+    excerpt: 'Besides the Eclipse plugin you will also find code samples and libraries which can make your ECM live as a developer a lot easier. Checkout the articles for more details.'
+    btn_label: "Comming Soon..."
+    btn_class: "btn--inverse"
+    url: "#test-link"
 
 ---
+{% include feature_row id="features_header" type="center" %}
+
+{% include feature_row id="feature_row2" %}
+{% include feature_row id="intro" type="center" %}
