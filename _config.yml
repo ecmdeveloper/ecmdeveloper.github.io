@@ -78,11 +78,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Ricardo Belfor"
+  avatar           : "/assets/images/RicardoBelfor.jpg"
+  bio              : "More then twenty years trying to get the best out of IBM FileNet products."
+  location         : "Almere, The Netherlands"
+  email            : "ricardo.belfor@ecmdeveloper.com"
   uri              :
   bitbucket        :
   codepen          :
@@ -90,12 +90,12 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "ecmdeveloper"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "ricardo-belfor-5040316"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
