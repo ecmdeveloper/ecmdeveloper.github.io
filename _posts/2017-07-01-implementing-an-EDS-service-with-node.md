@@ -1,10 +1,9 @@
 ---
 title: "Implementing an EDS service with Node.js"
 date: 2017-07-01 12:00
-subtitle: Websites are becoming leaner, faster and more agile, as users demand quick, seamless experiences.
-lead: 70% of today’s WordPress installations are vulnerable to known exploits (and WordPress powers more than 25% of the web). WordPress is used by 58.8% of all the websites whose content management system we know.
 layout: "single"
 categories: EDS
+excerpt: "This article shows you how to build an External Data Service with Node.js. The interface is based on JSON and JavaScript is very well suited to handle this data."
 ---
 
 
