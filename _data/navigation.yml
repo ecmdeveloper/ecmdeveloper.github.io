@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Eclipse Plug-in"
+    url: "/plugin/intro/"
   - title: "Posts"
     url: "/blog/"
   - title: "Help"
@@ -9,3 +11,37 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+plugin:
+  - title: Eclipse plug-in
+    children:
+      - title: "Introduction"
+        url: "/plugin/intro/"
+  - title: Basics
+    children:
+      - title: "Getting Started"
+        url: "/plugin/getting-started/"
+      - title: "Browsing Object Stores"
+        url: "/plugin/browsing-object-stores/"
+      - title: "Searching"
+        url: "/plugin/searching/"
+      - title: "Actions"
+        url: "/plugin/actions/"
+  - title: "Editing"
+    children:
+      - title: "Properties"
+        url: "/plugin/editing-properties/"
+      - title: "Content"
+        url: "/plugin/editing-content/"
+      - title: "Security"
+        url: "/plugin/editing-security/"
+      - title: "Code Modules"
+        url: "/plugin/codemodules/"
+      - title: "Class Diagrams"
+        url: "/plugin/class-diagrams/"
+  - title: "Coding"
+    children:
+      - title: "Console Projects"
+        url: "/plugin/console-projects"
+      - title: "Code Templates"
+        url: "/plugin/code-templates/"
