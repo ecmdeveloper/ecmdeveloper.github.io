@@ -4,7 +4,6 @@ author_profile: false
 sidebar:
   nav: "plugin"
 ---
-# Download
 
 This first step is to download the software for the plug-in. The project is hosted on [sourceforge.net](http://sourceforge.net/projects/ecmdeveloper). The plug-in can be downloaded [here](http://sourceforge.net/projects/ecmdeveloper/files/) or by using the Eclipse update site [http://www.ecmdeveloper.com/update](http://www.ecmdeveloper.com/update).
 

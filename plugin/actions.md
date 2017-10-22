@@ -6,9 +6,6 @@ sidebar:
   nav: "plugin"
 ---
 
-
-# Actions
-
 There are different actions you can perform while you are browsing and searching for objects.
 
 ## View

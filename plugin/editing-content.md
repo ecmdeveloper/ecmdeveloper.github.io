@@ -5,7 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Editing Content
 The content of a document can be edited using the checkout and the checkin commands. If the content of the document is saved to the Workspace then the document can be tracked. In this case the document is coupled to the file in the Workspace. If the document is saved or checked in the the content of this file is used.
 ## Tracked Files View
 All the documents that are tracked in the Workspace can be viewed in the Tracked Files View. This view can be opened by using the __Window &gt; Show view &gt;Other__ command. The view is located in the __ECM Developer__ category. If the __Object Store__ perspective is selected then there is a shortcut under the __Window &gt; Show view__ menu.

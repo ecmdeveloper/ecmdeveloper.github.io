@@ -5,8 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Editing Properties
-
 The properties of folders, documents and custom objects can be edited or viewed. The properties editor can be started using the Edit command from the objects context menu in the Object Stores view. The following window will be opened:
 
 ![document_editor]({{ site.url }}/plugin/images/document_editor.jpg)

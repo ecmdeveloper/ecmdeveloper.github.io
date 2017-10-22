@@ -5,7 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Searching
 Searching is completely integrated in the Eclipse IDE. You can start your search just as any other search is started using the __Search__ command or the Search button on the toolbar. The search result is shown in the standard Eclipse Search view and the result is also present in the Eclipse search history.
 ## Search Dialog
 In the Search dialog you have to select the __Object Store Search__ tab:

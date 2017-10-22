@@ -5,8 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Code Templates
-
 Although its is not very difficult to start developing code modules, a convenient way to generate the starting Java code is by using the templates in the ECM Developer plug-in. There are templates for the following code module types:
 
 *	Event Actions

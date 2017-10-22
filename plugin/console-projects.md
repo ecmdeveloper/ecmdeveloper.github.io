@@ -5,8 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Console Projects
-
 Console projects give you the possibility to run Java methods using the current selection as the input. This can be either objects you are browsing with the Object Stores viewer or the result of a query. The output of these Java methods can be printed to the Eclipse console using a simple `System.out.println()` method, hence the name "Console Projects". This way you can add functionality that is at this moment not present in the ECM Developer plug-in. It also saves you from creating a full blown project every time you want to do something simple.
 
 ## Creating Console Projects

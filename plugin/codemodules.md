@@ -5,8 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Editing Code Modules
-
 Code Modules are Java classes which implement the desired behavior of Event Actions, Document Lifecycle Actions and Document Classification Actions. Starting points for these classes can be generated using the code templates. With he Code Module editor of the ECM Developer plug-in you can create a new Code Module or update an existing Code Module.
 
 ## Creating Code Modules

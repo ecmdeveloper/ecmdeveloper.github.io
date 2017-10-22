@@ -5,8 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Editing Class Diagrams
-
 The ECM Developer plug-in contains an editor that can be used to create a UML class diagram of the document, folder and custom object classes defined in the Object Store. The diagrams can be printed or exported to an image file in the JPEG, BMP or PNG format. Once a class is placed on the diagram an active connection to the Object Store is no longer necessary to edit the diagram. Only if the class must be refreshed, after a changed definition, a connection must be made.
 ## Object Store Class Diagram Perspective
 For convenient editing of the Class Diagrams the Object Store Class Diagram perspective must be opened first. With the __Window > Open Perspective > Other__ command the perspective selection window is opened. In this window the __Object Store Class Diagram__ perspective can be selected. This perspective contains on the left side the Object Store Classes View. In this view for each defined connection and Object Store the classes can be browsed. Browsing can only be done is the Object Store is already connected. If the Object Store is not connected using one of the other views of the plug in then in the content menu of the Object Store a connection can be made to the Object Store.

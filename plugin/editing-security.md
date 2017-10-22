@@ -5,8 +5,6 @@ sidebar:
   nav: "plugin"
 ---
 
-# Editing Security
-
 The security of folders, documents and custom objects can be edited or viewed with the security editor. You can start the security editor by using the __Edit__ command from the objects context menu in the different views. The following editor window will be opened:
 
 ![security_editor]({{ site.url }}/plugin/images/security_editor.png)
