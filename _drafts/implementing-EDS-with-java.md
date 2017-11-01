@@ -8,7 +8,7 @@ excerpt: "This article shows you how to build an External Data Service with Java
 
 <i class="fa fa-fw fa-github" aria-hidden="true"> </i>The Code on GitHub
 
-EDS (External Data Services) is a feature available in IBM Content Navigator and
+External Data Services (EDS) is a feature available in IBM Content Navigator and
 IBM Case Manager. It allows you to control the way the different properties in
 the application should behave and interact with each other. This is a very powerful
 technique allowing you to accomplish the following tasks:
@@ -17,20 +17,14 @@ technique allowing you to accomplish the following tasks:
 -   Create dynamic choice list, where the values of the choice list depend on the value of another property
 -   Pre-fill your property values when a new object is added.
 
-These are just a few examples of the numerous possibilities. Next you will see how you can use the API to build all this functionality. This article assumes that the reader knows how to create and deploy web applications based on servlets.
+These are just a few examples of the numerous possibilities. In this blog post a
+API is introduced to build all this functionality. This article assumes that the reader knows how to create and deploy web applications based on servlets.
 
 # The External Data Services contract
 
 An EDS component is a web application which responds to specific GET and POST request from the EDS infrastructure. The interaction between the component and the infrastructure depends on the application you are using.
 
 If you are using IBM Content Navigator from a browser or from a Microsoft Office application then the EDS infrastructure is implemented as a Content Navigator plugin. One of the configuration parameters of this plugin is the URL of the location where your EDS component is deployed. Relative to this URL there are two requests the EDS infrastructure will perform:
-
-
-The external data service (EDS) is a powerful feature of the IBM Content Navigator
-and Case Management products. It allows you to control the behavior of the properties
-in a centralized place without modifications to the user interface. The interface
-between the application and the implementation is based on passing JSON data back and forth.
-
 
 
 # How to use the API
@@ -68,3 +62,7 @@ An array that contains values for the properties that are defined for the class 
 
 An array that contains a series of key value pairs that specify contextual information for a specific class or item type. This parameter is used to send information to an external data service when an IBM Content Navigator user begins to add a document, add a folder, use an entry template, or create a search.
 </div>
+
+* Deploy servlet
+* Test the servlet
+* Register the servlet url in the Case Manager configuration tool.
