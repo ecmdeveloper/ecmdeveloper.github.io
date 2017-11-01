@@ -20,4 +20,18 @@ It will require some initial investment from your part, but you will quickly enj
 Maven friendly, by for example adding a pom.xml file? Or even one step further, add the different
 public API's to a central repository?</blockquote>
 
-Installing the FileNet artifacts is done using Maven.
+Installing the FileNet artifacts is done using Maven. The filenet-maven-ce project
+contains the pom file necessary to install the CE API. The procedure to do this follows
+the Maven opinionated approach, requiring minimal configuration.
+
+* Checkout the project from Github
+* Copy the CE API files to the folder TO DO.
+* Now you have to obtain the version of your CE API. The easiest way to do this is to look in the manifest file of the jace.jar file and obtain the version from  there.
+* next run the Maven command TO DO with the version number as the value of the jace.jar version property.  
+* Let Maven do it's magic
+
+Now you are all set. Add the following dependency to your pom file and the CE API and all it's dependencies are added to your project:
+TO DO
+Make sure that every time you upgrade or patch your system you update your repository accordingly. 
+
+Also note that the jar files you add this way are necessary if you want to connect using the WSI interface. If you want to use the EJB interface you need some more dependencies. These are not in the scope of this project.
