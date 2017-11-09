@@ -5,6 +5,8 @@ sidebar:
   nav: "plugin"
 ---
 
+## Browsing Object Stores
+
 There are two views that can be used for browsing the object stores: the __Object Stores__ view or the __Object Store Favorites__ view. Most of the actions are available for both views. Changes made in one view will also be visible in the other view.
 
 You can open both views by switching to the Object Store perspective or by using the __Window > Show view >Other__ command. Both views are located in the __ECM Developer__ category. Selecting the Object Stores view will show the following window:

@@ -18,6 +18,11 @@ Documents can be viewed using the __View__ command of the context menu or by dou
 
 When viewing starts, first a read only local copy of the content of the document is made. Next the file is opened, either in the available Eclipse editor or in an external system editor. If the document has no content then a message is shown. If the document contains multiple content elements then specific content elements of the document can be selected. If possible the local copy will be deleted when the editor closes. If this is not possible for the specific editor then the file will be deleted when Eclipse terminates or restarts.
 
+## Download
+The content of documents can be downloaded using the __Download__ command of the context menu. This menu contains the same sub items as the __View__ command, but instead of opening a viewer the content can be downloaded into the current Eclipse workspace. The user is prompted for a filename and a location in the workspace. If a existing document in the workspace is about to be overwritten then a confirmation is asked.
+
+<blockquote>A generic project within your workspace may be handy to keep these files.</blockquote>
+
 ## Rename
 
 An Object Store item can be renamed using either the __File > Rename__ command or the __Rename__ command of the context menu. A dialog will appear where a new name for the item can be entered:
@@ -72,5 +77,3 @@ The next wizard page gives a preview of all the items being deleted with the cur
 ![preview_delete]({{ site.url }}/plugin/images/preview_delete.png)
 
 When this wizard page is finished a delete confirmation is requested and the objects are being deleted. During the delete action this operation may be canceled. In this case there is no rollback of the items already deleted.
-## Download
-The content of documents can be downloaded using the __Download__ command of the context menu. This menu contains the same sub items as the <a title="View" href="/actions/view/">__View__ </a>command, but instead of opening a viewer the content can be downloaded into the current Eclipse workspace. The user is prompted for a filename and a location in the workspace. If a existing document in the workspace is about to be overwritten then a confirmation is asked.

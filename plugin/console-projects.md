@@ -8,17 +8,13 @@ sidebar:
 Console projects give you the possibility to run Java methods using the current selection as the input. This can be either objects you are browsing with the Object Stores viewer or the result of a query. The output of these Java methods can be printed to the Eclipse console using a simple `System.out.println()` method, hence the name "Console Projects". This way you can add functionality that is at this moment not present in the ECM Developer plug-in. It also saves you from creating a full blown project every time you want to do something simple.
 
 ## Creating Console Projects
-For the Console Project to work you have to use the New Project wizard to create a new project. Depending on your target you can either choose a new __Content Engine Console Project__ or a new __CMIS Console Project__. These wizards can be found in the __ECM Developer__ category:
-
-![new_console_project]({{ site.url }}/plugin/images/new_console_project.png)
-
-The wizards follow the standard steps you take when you create a new Java Project. When the wizard is finished it adds the infrastructure necessary for running your Console Project to the newly created project. This includes references to the relevant Java API.
+For the Console Project to work you have to use the New Project wizard to create a new project. Choose a new __Content Engine Console Project__ in the __ECM Developer__ category. The wizard follow the standard steps you take when you create a new Java Project. When the wizard is finished it adds the infrastructure necessary for running your Console Project to the newly created project. This includes references to the relevant Java API files.
 
 ## Creating Console Classes
 The Java method that you will be calling must be encapsulated in a Java Class. You can either use the New Console Class wizard to generate the Java Class for you or create a new Java Class from scratch. There are two requirement for this class:
 
 *  The class should have a no arguments constructor.
-*  The class contains a public Java method which takes one argument with the type Object. You can cast this object in the Java method to your specific need.
+*  The class contains a public Java method which takes one argument with the type `Object`. You can cast this object in the Java method to your specific need.
 
 A minimal Java class will look like this:
 
@@ -35,7 +31,7 @@ public class MinimalConsoleClass {
 }
 ```
 
-If you want to generate the Java Class then you can start the wizard using the standard New wizard of Eclipse. The wizards for Content Engine and CMIS client classes are both located in the ECM developer category.
+If you want to generate the Java Class then you can start the wizard using the standard New Class wizard of Eclipse. The wizard for the Content Engine Console class is also located in the ECM developer category.
 
 * In the first page the basic characteristics of the Java class is configured:<br>
 ![new_console_project_class]({{ site.url }}/plugin/images/new_console_project_class.png)
@@ -45,7 +41,7 @@ You can specify the name of the method and the type of the object you expect as 
 
 The generated code for a Content Engine Console Class targeting documents will look like this:
 
-```
+```java
 package client;
 
 import com.filenet.api.core.Document;
@@ -80,13 +76,7 @@ public class MyConsoleClass {
 
 ## Coding Console Classes
 
-The Java API you are using for coding the console classes depends on your target:
-
-* If you are targetting the __Content Engine__ then you write your Java code using the standard Content Engine Java API.
-* If you are targetting a __CMIS__ repository then you can write your Java code using the Open CMIS client libraries. Details about this library can be found at <a title="chemistry.apache.org" href="http://chemistry.apache.org">chemistry.apache.org</a>.
-
-
-When you are writing code for a Content Engine object store then the single object used as the input for the method can be used to access most of the Java domain model. From a `Document`, `Folder` and `CustomObject` object you can get the `ObjectStore` object, and from this object you can go almost anywhere.
+You write your Java code using the standard Content Engine Java API. When you are writing code for a Content Engine object store then the single object used as the input for the method can be used to access most of the Java domain model. From a `Document`, `Folder` and `CustomObject` object you can get the `ObjectStore` object, and from this object you can go almost anywhere.
 
 ## Running Console Projects
 

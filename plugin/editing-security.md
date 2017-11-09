@@ -21,7 +21,7 @@ You can add new access control entries with the __Add Entry__ command of the too
 * If the object is stored in a CMIS repository the following dialog is shown. In this case you have to provide the name of the security principal:
 <a href="http://www.ecmdeveloper.com/wp-content/uploads/2012/12/principal_selection_no_realm.png"><img src="http://www.ecmdeveloper.com/wp-content/uploads/2012/12/principal_selection_no_realm.png" alt="" title="principal_selection_no_realm" width="488" height="197" class="alignnone size-full wp-image-697" /></a>
 
-## Deleting access control entries</h2>
+## Deleting access control entries
 You can delete access control entries with the __Delete Entry__ command of the toolbar or the __Delete__ command of the context menu. If you selected a security principal then all the access control entries belonging to the security principal are deleted. If you selected a specific access control entry, then only the selected entry is deleted. If there are no more access control entries coupled to the security principal then the security principal is also removed from the table.
 <h2>Refreshing</h2>
 You can refresh the editor with the __Refresh Security__ command of the toolbar. This command will fetch the access control entries stored in the repository. All the changes made to the object in the editor will be lost.
