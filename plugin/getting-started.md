@@ -18,7 +18,7 @@ Before you install this plugin you have to make sure that you have the Content E
 
 Refer to the documentation of your Eclipse version how to install plug-ins. After the plug-in is installed do not restart Eclipse immediately. For the plug-in to work properly, first the Content Engine Client files must be made available within the Eclipse environment. First navigate to the __plugins__ folder of your eclipse installation. The installation of the ECM Developer plug-in created a folder called __com.ecmdeveloper.plugin.lib_2.3.0\lib__. Now the following files of the __CE_API__ folder must copied to this folder:
 * `Jace.jar`
-* `log4j.jar` or `log4j-1.2.14.jar` (the later will be renamed during the first startup to log4j.jar)
+* `log4j.jar` or `log4j-1.2.14.jar`
 * `stax-api.jar`
 * `xlxpScanner.jar`
 * `xlxpScannerUtils.jar`

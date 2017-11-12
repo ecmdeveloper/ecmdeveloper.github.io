@@ -17,6 +17,8 @@ plugin:
     children:
       - title: "Introduction"
         url: "/plugin/intro/"
+      - title: "Version History"
+        url: "/plugin/version-history/"
   - title: Basics
     children:
       - title: "Getting Started"
@@ -45,3 +47,5 @@ plugin:
         url: "/plugin/console-projects"
       - title: "Code Templates"
         url: "/plugin/code-templates/"
+      - title: "Example Console Project"
+        url: "/plugin/example-console-project"
