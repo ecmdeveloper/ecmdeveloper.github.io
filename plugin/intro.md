@@ -7,7 +7,9 @@ sidebar:
 
 ## Introduction
 
-ECM Developer is an Eclipse plug-in aimed at supporting the development of applications
+[ ![Download](https://api.bintray.com/packages/ecmdeveloper/eclipse-plugin/ecmdeveloper/images/download.svg) ](https://bintray.com/ecmdeveloper/eclipse-plugin/ecmdeveloper/_latestVersion)
+
+ECM Developer is an open source Eclipse plug-in aimed at supporting the development of applications
 using the IBM FileNet P8 Content Engine.
 
 <blockquote>The old version also supported CMIS repositories, but due to limited time and

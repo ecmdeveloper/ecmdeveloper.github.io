@@ -13,6 +13,7 @@ sidebar:
 * Changed build process to Tycho
 * Added Change Preprocessor support
 * Small bug fixes
+* Displaying also hidden properties in property editor
 
 ## Version 2.0.0.0 5/27/2012
 

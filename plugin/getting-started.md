@@ -7,7 +7,9 @@ sidebar:
 
 # Installation
 
-This first step is to download the software for the plug-in. The plug-in can be downloaded [here](http://sourceforge.net/projects/ecmdeveloper/files/) or by using the Eclipse update site [http://www.ecmdeveloper.com/update](#).
+[ ![Download](https://api.bintray.com/packages/ecmdeveloper/eclipse-plugin/ecmdeveloper/images/download.svg) ](https://bintray.com/ecmdeveloper/eclipse-plugin/ecmdeveloper/_latestVersion)
+
+This first step is to download the software for the plug-in. The plug-in can be downloaded at https://bintray.com/ecmdeveloper/eclipse-plugin/ecmdeveloper or by using the Eclipse update site [https://dl.bintray.com/ecmdeveloper/eclipse-plugin/ecmdeveloper/latest](#).
 
 The plug-in uses the Java API based on the WSI protocol to access the FileNet P8 Content Engine. Because the Java API is not distributed with this plug-in, using this plug-in requires access to the Java API files. Therefore installing this plug-in is a little bit more complicated than a basic plug-in install.
 
