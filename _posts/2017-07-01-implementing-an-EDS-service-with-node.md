@@ -18,7 +18,7 @@ This article assumes that you know how to configure the EDS implementation for I
 We assume that you already installed Node.js on your system. Otherwise you can go to https://nodejs.org for installation instructions. To create a new EDS service create a new folder and type the following commands:
 ```
 npm init
-npm install to-do --save
+npm install body-parser express morgan underscore --save
 ```
 Now you have all the necessary modules to build an EDS service. We start with the easiest implementation of the two, the Case Manager service. Create the JavaScript file you specified when running the init command and add the following code to it:
 
