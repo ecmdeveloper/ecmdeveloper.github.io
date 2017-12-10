@@ -15,7 +15,7 @@ This article assumes that you know how to configure the EDS implementation for I
 
 <h2>An EDS implementation for IBM Case Manager</h2>
 
-We assume that you already installed Node.js on your system. Otherwise you can go to https://nodejs.org for installation instructions. To create a new EDS service create a new folder and type the following commands:
+We assume that you already installed Node.js on your system. Otherwise you can go to [https://nodejs.org](https://nodejs.org) for installation instructions. To create a new EDS service create a new folder and type the following commands:
 ```
 npm init
 npm install body-parser express morgan underscore --save
@@ -24,7 +24,7 @@ Now you have all the necessary modules to build an EDS service. We start with th
 
 {% gist rickx1/1c3490e4e6f8a13a7b65da4f5b5aeaba nodecm.js %}
 
-The Express module is used as a HTTP server handling all the incoming requests (https://expressjs.com for more details). The JSON parser will parse the data comming from the EDS service and evaluate it to an object as the `body` object of the `request` object. The `getProperty()` function is a convenience function which uses the underscore module to get a specific property as an object. You have to supply the request object and the symbolic name of the property you want to fetch. An import property of the `body` object is the `requestMode` property. This property indicates the reason why your EDS implementation is called. Possible values for this properties are: `initialNewObject`, `initialExistingObject`, `inProgressChanges`, `finalNewObject` and `finalExistingObject`. Based on the value of this property you can change the behaviour of your implementation.
+The Express module is used as a HTTP server handling all the incoming requests ([https://expressjs.com](https://expressjs.com) for more details). The JSON parser will parse the data comming from the EDS service and evaluate it to an object as the `body` object of the `request` object. The `getProperty()` function is a convenience function which uses the underscore module to get a specific property as an object. You have to supply the request object and the symbolic name of the property you want to fetch. An import property of the `body` object is the `requestMode` property. This property indicates the reason why your EDS implementation is called. Possible values for this properties are: `initialNewObject`, `initialExistingObject`, `inProgressChanges`, `finalNewObject` and `finalExistingObject`. Based on the value of this property you can change the behaviour of your implementation.
 
 The actual handler function starts with an empty response object containing an empty properties array. The task of your implementation is to fill this array with modified property objects enriched with business logic. For every property you want to change, you have to fetch the property object, modify the property object and add the modified version of the property to the response object. For example the following code will change an editable property to a readonly property displaying the current date:
 
