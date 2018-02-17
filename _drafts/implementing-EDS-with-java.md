@@ -6,7 +6,7 @@ categories: "EDS"
 excerpt: "This article shows you how to build an External Data Service with Java. It provides an API which takes care of all the JSON stuf, you just has to focus on the business rules."
 ---
 
-<i class="fa fa-fw fa-github" aria-hidden="true"> </i>The Code on GitHub
+<i class="fa fa-fw fa-github" aria-hidden="true"> </i>[Code on GitHub](https://github.com/ecmdeveloper/eds-servlet)
 
 External Data Services (EDS) is a feature available in IBM Content Navigator and
 IBM Case Manager. It allows you to control the way the different properties in
@@ -25,44 +25,62 @@ API is introduced to build all this functionality. This article assumes that the
 An EDS component is a web application which responds to specific GET and POST request from the EDS infrastructure. The interaction between the component and the infrastructure depends on the application you are using.
 
 If you are using IBM Content Navigator from a browser or from a Microsoft Office application then the EDS infrastructure is implemented as a Content Navigator plugin. One of the configuration parameters of this plugin is the URL of the location where your EDS component is deployed. Relative to this URL there are two requests the EDS infrastructure will perform:
+* `<rooturl>/types`: a GET request that returns a JSON object that describes the classes handled by the EDS servlet.
+* `<rooturl>/type`: a POST request containing information in JSON format about the action that is performed
+by the client. The response of this request is again a JSON object, describing how the client should behave
+for certain properties. For instance the following response object notifies the client that in
+this situation a property, which is writeable in other situations, should be readonly:
 
+TODO: more case manager info
 
-# How to use the API
+If you are using IBM Case Manager, then only the later call is used for every Case Type in your solution.
 
-This implementation uses the [Jackson libraries](https://github.com/FasterXML/jackson) to do all
+# The EDS Servlet API
+
+Managing all this JSON data can be quite cumbersome in practice. Therefore this article
+introduces the EDS Servlet API. This API is a very thin layer around the requests and responses, using the [Jackson libraries](https://github.com/FasterXML/jackson) to do all
 the JSON heavy lifting. The incoming JSON is parsed into Java POJO classes. The output data is
 constructed using Java classes and converted to JSON using Jackson.
 
-The incoming data is converted in a Java object of type
+The incoming data is converted in a Java object of type `ExternalDataRequest`:
 
 ```java
-public String getObjectId() // The ID of the object being edited
-public Map<String, Property> getProperty() // A map of all the properties of the object
-public RequestMode getRequestMode() // The reason why the EDS component is called
-public String getRepositoryId() // The ID
-public Map<String, Object> getClientContext()
-public String getExternalDataIdentifier()
+String getObjectId() // The ID of the object being edited
+String getObjectType() // The object type that is being edited
+Property getProperty(String name) // A method to fetch a property object
+RequestMode getRequestMode() // The reason why the EDS component is called
+String getRepositoryId() // The ID of the repository
+Map<String, Object> getClientContext() // A map containing contextual information about the request.
+String getExternalDataIdentifier()
 ```
 
-Method | Description
--------|------------
-`public String getObjectId()` | The globally unique identifier (GUID) or persistent identifier (PID) that identifies the item that is being edited.
-public Map<String, Property> getProperty() | An map that contains values for the properties that are defined for the class or item type. For each property, the request contains the symbolic name and the property value.
+The outgoing data is constructed using a Java object of the type `ExternalDataResponse`:
+```java
+void addProperty(Property property); // Adds a Property object to the external data response.
+                                     // The property object describes the
+                                     // required behavior of the corresponding property.
+```
 
+The deserializing and serializing of the data is all handled in the Java class
+`AbstractEDSServlet`. So to use this API all you have to do is provide an implementation
+of a servlet extending the `AbstractEDSServlet`:
 
-{% gist rickx1/1a384706dbb5ff9b4e035b2f0585286b %}
+```java
+@WebServlet(
+		description = "An example of an EDS servlet.",
+		urlPatterns = { "/type/*", "/types"
+		})
+public class EDSExampleServlet extends AbstractEDSServlet {
 
+	private static final long serialVersionUID = 1L;
 
-<div style="background-color: #fef4e6">
-### `private List<Property> properties`
+	@Override
+	public void handleRequest(ExternalDataRequest dataRequest, ExternalDataResponse dataResponse) {
 
-An array that contains values for the properties that are defined for the class or item type. For each property, the request contains the symbolic name and the property value.
+		  // TODO: add your implementation code here...
+	}
+}
+```
+The [documentation]((https://github.com/ecmdeveloper/eds-servlet)) of the API contains examples how to implement the EDS component for both IBM Case Manager and IBM Content Navigator.
 
-## `private Map<String, Object> clientContext`
-
-An array that contains a series of key value pairs that specify contextual information for a specific class or item type. This parameter is used to send information to an external data service when an IBM Content Navigator user begins to add a document, add a folder, use an entry template, or create a search.
-</div>
-
-* Deploy servlet
-* Test the servlet
-* Register the servlet url in the Case Manager configuration tool.
+# But what about debugging?
