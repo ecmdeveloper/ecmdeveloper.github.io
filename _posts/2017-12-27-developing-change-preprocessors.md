@@ -1,6 +1,6 @@
 ---
 title: "Developing Change Preprocessors for the FileNet P8 Content Engine"
-date: 2017-07-01 12:00
+date: 2017-12-27 12:00
 layout: "single"
 categories: "ContentEngine"
 excerpt: "This article will show you how to benefit the most from Change Preprocessor Actions. It shows you when to use them and how to structure your code to suit your use case"
