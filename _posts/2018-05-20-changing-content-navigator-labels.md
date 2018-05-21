@@ -3,7 +3,7 @@ title: "Managing Content Navigator Labels"
 date: 2018-05-01 12:00
 layout: "single"
 categories: "ContentNavigator"
-excerpt: "Sometimes you may want to make small changes to the IBM Content Navigator interface. This article introduces a custom Content Navigator plugin which allows you to change the labels in a convenient manner."
+excerpt: "Sometimes you may want to make small changes to the IBM Content Navigator interface. This article introduces a custom plugin which allows you to change the labels in a convenient manner."
 ---
 
 <i class="fa fa-lg fa-download" aria-hidden="true"></i> [Download](https://github.com/ecmdeveloper/icn-plugins/releases/download/v1.0.0/labelmanager.jar)&nbsp;
@@ -28,5 +28,7 @@ In this page you can select a message key and change the existing text to a new 
 is now changed to:
 
 ![document-type-after]({{ site.url }}/img/posts/document-type-after.png)<br/>
+
+> No, I did not know in advance that the internal key of this message was actually document_type.
 
 At this moment there is no support for localization, the entered text is used for all locales. Note that you have to restart the browser page for all the changes to be visible in the interface. Also make sure that the plugin is the first plugin that is loaded. In the list showing all the plugins you can change the order of the plugins.
