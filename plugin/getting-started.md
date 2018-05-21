@@ -18,7 +18,13 @@ Before you install this plugin you have to make sure that you have the Content E
 * The Content Engine Client files are located in a folder named __CE_API__ in the FileNet installation folder on the Content Engine server. You can copy this folder to your local machine.
 * If you don't have access to this folder the Content Engine Client files can also be downloaded using the _IBM Administrative Console for Content Platform Engine (ACCE)_ application. Go to __Domain > IBM FileNet Content Manager > Java CEWS client__ and download the client files.
 
-Refer to the documentation of your Eclipse version how to install plug-ins. After the plug-in is installed do not restart Eclipse immediately. For the plug-in to work properly, first the Content Engine Client files must be made available within the Eclipse environment. First navigate to the __plugins__ folder of your eclipse installation. The installation of the ECM Developer plug-in created a folder called __com.ecmdeveloper.plugin.lib_2.3.0\lib__. Now the following files of the __CE_API__ folder must copied to this folder:
+Refer to the documentation of your Eclipse version how to install plug-ins. After the plug-in is installed do not restart Eclipse immediately. For the plug-in to work properly, first the Content Engine Client files must be made available within the Eclipse environment.
+
+First you have to locate the __plugins__ folder of your Eclipse installation. There are two possible situations:
+* If you installed Eclipse using the installer application then the __plugins__ folder is in a folder relative to your user profile. So on a Mac look for the folder `/Users/{username}/.p2/pool/plugins` and on Windows for the folder `C:\Users\{username}\.p2\pool\plugins` and on Linux for the folder `~/.p2/pool/plugins`.
+* If you installed Eclipse by unzipping the download then the __plugins__ folder is directly under your __eclipse__ folder.
+
+The installation of the ECM Developer plug-in created a folder called __com.ecmdeveloper.plugin.lib_2.3.0\lib__ underneath the  __plugins__ folder. Now the following files of the __CE_API__ folder must copied to this folder:
 * `Jace.jar`
 * `log4j.jar` or `log4j-1.2.14.jar`
 * `stax-api.jar`
