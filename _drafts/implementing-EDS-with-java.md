@@ -17,19 +17,30 @@ technique allowing you to accomplish the following tasks:
 -   Create dynamic choice list, where the values of the choice list depend on the value of another property
 -   Pre-fill your property values when a new object is added.
 
-These are just a few examples of the numerous possibilities. In this blog post a
-API is introduced to build all this functionality. This article assumes that the reader knows how to create and deploy web applications based on servlets.
+These are just a few examples of the numerous possibilities. In this blog post a API is introduced allowing you to build all this functionality more easily. This article assumes that the reader knows how to create and deploy web applications based on servlets.
 
 # The External Data Services contract
 
 An EDS component is a web application which responds to specific GET and POST request from the EDS infrastructure. The interaction between the component and the infrastructure depends on the application you are using.
 
-If you are using IBM Content Navigator from a browser or from a Microsoft Office application then the EDS infrastructure is implemented as a Content Navigator plugin. One of the configuration parameters of this plugin is the URL of the location where your EDS component is deployed. Relative to this URL there are two requests the EDS infrastructure will perform:
+If you are using IBM Content Navigator from a browser or from a Microsoft Office application then the EDS infrastructure is implemented as a Content Navigator plugin. One of the configuration parameters of this plugin is the URL of the location where your EDS servlet is deployed. Relative to this URL there are two requests the EDS infrastructure will perform:
 * `<rooturl>/types`: a GET request that returns a JSON object that describes the classes handled by the EDS servlet.
 * `<rooturl>/type`: a POST request containing information in JSON format about the action that is performed
 by the client. The response of this request is again a JSON object, describing how the client should behave
 for certain properties. For instance the following response object notifies the client that in
 this situation a property, which is writeable in other situations, should be readonly:
+
+```json
+{
+   externalDataIdentifier: "EDS API",
+   properties: [
+      {
+         symbolicName: "PropertyName",
+         displayMode: "readonly"
+      }
+   ]
+}
+```
 
 If you are using IBM Case Manager, then only the later call is used for every Case Type in your solution. You have to use
 the Case Manager Configuration Tool to configure the EDS URL for your solution.
@@ -81,7 +92,7 @@ examples how to implement the EDS component for both IBM Case Manager and IBM Co
 Debugging the EDS component can be very cumbersome. The client contains some optimizations and caches
 some of the information provided by the EDS component. It is therefore very handy to know the different
 requests made from the client and the responses provided by your implementation. To accomplish this
-the servlet contains a ping page. The ping page can be enable by adding an URL pattern for the ping page. The declaration of your class extending `AbstractEDSServlet` class should now look like this:
+the servlet serves a ping page. The ping page can be enable by adding an URL pattern for the ping page. The declaration of your class extending `AbstractEDSServlet` class should now look like this:
 
 ```java
 @WebServlet(description = "An example of an EDS servlet.",
@@ -93,3 +104,11 @@ public class EDSExampleServlet extends AbstractEDSServlet {
 ```
 
 In the ping page you can now turn tracing on and off. If you turn tracing on then you can inspect the ten last requests made to your EDS component.
+
+![ping_page]({{ site.url }}/img/posts/ping-page.png)
+
+## Reference
+
+The javadoc documentation for this API can be found [here](http://ecmdeveloper.com/eds-servlet/).
+
+
