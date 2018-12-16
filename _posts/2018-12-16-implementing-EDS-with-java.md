@@ -1,9 +1,9 @@
 ---
 title: "Implementing an EDS service with Java"
-date: 2017-07-01 12:00
+date: 2018-12-16 12:00
 layout: "single"
 categories: "EDS"
-excerpt: "This article shows you how to build an External Data Service with Java. It provides an API which takes care of all the JSON stuff, you just has to focus on the business rules."
+excerpt: "This article shows you how to build an External Data Service with Java for IBM Content Navigator and Case Manager. It provides an API which takes care of all the JSON stuff, you just has to focus on the business rules."
 ---
 
 <i class="fa fa-fw fa-github" aria-hidden="true"> </i>[Code on GitHub](https://github.com/ecmdeveloper/eds-servlet)
@@ -42,8 +42,7 @@ this situation a property, which is writeable in other situations, should be rea
 }
 ```
 
-If you are using IBM Case Manager, then only the later call is used for every Case Type in your solution. You have to use
-the Case Manager Configuration Tool to configure the EDS URL for your solution.
+If you are using IBM Case Manager, then only the later call is used for every Case Type in your solution. You have to use the Case Manager Configuration Tool to configure the EDS URL for your solution.
 > Make sure that you redeploy your solution when you (re)configure your EDS URL
 
 # Introducing the EDS Servlet API
@@ -85,14 +84,14 @@ dataResponse.addProperty(property)
 ```
 
 The [documentation](https://github.com/ecmdeveloper/eds-servlet) of the API contains
-examples how to implement the EDS component for both IBM Case Manager and IBM Content Navigator.
+examples how to implement the EDS component for both [IBM Case Manager](https://github.com/ecmdeveloper/eds-servlet/#a-simple-case-manager-example) and [IBM Content Navigator](https://github.com/ecmdeveloper/eds-servlet/#a-simple-content-navigator-example).
 
 # But wait there is more!
 
 Debugging the EDS component can be very cumbersome. The client contains some optimizations and caches
 some of the information provided by the EDS component. It is therefore very handy to know the different
 requests made from the client and the responses provided by your implementation. To accomplish this
-the servlet serves a ping page. The ping page can be enable by adding an URL pattern for the ping page. The declaration of your class extending `AbstractEDSServlet` class should now look like this:
+the servlet serves a [ping](https://github.com/ecmdeveloper/eds-servlet/#debugging) page. The ping page can be enable by adding an URL pattern for the ping page. The declaration of your class extending `AbstractEDSServlet` class should now look like this:
 
 ```java
 @WebServlet(description = "An example of an EDS servlet.",
@@ -107,8 +106,12 @@ In the ping page you can now turn tracing on and off. If you turn tracing on the
 
 ![ping_page]({{ site.url }}/img/posts/ping-page.png)
 
-## Reference
+Another nice feature of the API is the ability to show exception information to the user. If an exception is thrown in your EDS component, the default behaviour is to show a dialog with the not very informative message _500 Internal Server Error_. The API contains [instructions](https://github.com/ecmdeveloper/eds-servlet/#custom-error-messages) how to set up custom error messages. An exception throwing the current date will now show the following error dialog in IBM Content Navigator:
+
+![error_dialog]({{ site.url }}/img/posts/content_navigator_error.png)
+
+# Reference
+
+The documentation can be found [here](https://github.com/ecmdeveloper/eds-servlet)
 
 The javadoc documentation for this API can be found [here](http://ecmdeveloper.com/eds-servlet/).
-
-
