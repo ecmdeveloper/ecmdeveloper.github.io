@@ -19,9 +19,9 @@ the event action mechanism and is capable of creating event actions and subscrip
 
 <blockquote>Starting from version 5.1 of the Content Engine there are some new server side features. Now you can also write event action handlers in Javascript instead of Java.
 New are also the Change Preprocessor Actions. These can be a solution when you encounter situations where event actions don’t apply. 
+</blockquote>
 
 Change preprocessors are discussed in depth in the follow-up on this article in the post [Developing Change Preprocessors for the FileNet P8 Content Engine]({{ site.url }}/contentengine/developing-change-preprocessors/).
-</blockquote>
 
 # A “Hello, World!” event action handler
 
@@ -97,7 +97,7 @@ files.add(new File("c:/temp/MyHelperClass.class") );
 codeModuleManager.update("MyCodeModule", files);
 ```
 This code will update the Code Module and all the associated event actions.
-A solution integrated in the Eclipse IDE for updating the code module and the event actions can be found at [www.ecmdeveloper.com](https://www.ecmdeveloper.com). This website features a free open source Eclipse plug-in targeting FileNet P8 developers. This plug-in contains a code module editor. With this code module editor the content of the code module can be configured and easily updated. The screen shot below will give you a general idea of the editor.
+A solution integrated in the Eclipse IDE for updating the code module and the event actions can be found at [www.ecmdeveloper.com](https://ecmdeveloper.com). This website features a free open source Eclipse plug-in targeting FileNet P8 developers. This plug-in contains a code module editor. With this code module editor the content of the code module can be configured and easily updated. The screen shot below will give you a general idea of the editor.
 
 ![code_module_editor]({{ site.url }}/img/posts/code_module_editor.png)<br/>
 
@@ -178,8 +178,6 @@ String dispenserPath = "/Dispensers/MyDispenser";
 You could decide to read these properties from a configuration file located somewhere on the class path. However this would not solve the second flaw in the code, the possibility for only one number dispenser for all the classes using the dispenser. In this case the subscription comes to the rescue. One of the properties of a subscription is the user string property, according to the property description a "string with no built-in behavior". The maximum length of this property is 255 characters. This property can be accessed from the Content Engine Enterprise Manager in the properties tab of the subscription.
 
 ![user_string]({{ site.url }}/img/posts/user_string.png)<br/>
-
-_Figure 4. The User String._
 
 The following code can be used to fetch the user string of the subscription that triggered the event action:
 ```java
