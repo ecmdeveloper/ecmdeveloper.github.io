@@ -26,7 +26,7 @@ if ( acceUtil ) {
     var partsToShow = 3;
   
     return name.match(/([^,]+)/g).slice(0,partsToShow).join(','); 
-  }
+  };
   console.log("Showing the principals distinguished name");
 }
 ```
